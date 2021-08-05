@@ -67,9 +67,10 @@ def map(pos):
             ],
         ]
     return button
-
-@Client.on_message(filters.command("vchelp") & ~filters.private & ~filters.channel)
-async def ghelp(_, message: Message):
+@Client.on_message(filters.command('start'))
+async def start(_, message: Message):
+    await message.reply_text(
+       f"""USE /vchelp """)
     await message.reply_text(
         f"""**🙋‍♀️ Hello there! I can play music in the voice chats of telegram groups & channels.**""",
         reply_markup=InlineKeyboardMarkup(
